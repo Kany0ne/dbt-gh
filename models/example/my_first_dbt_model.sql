@@ -10,7 +10,7 @@
 {{ config(materialized='table') }}
 
 with source_data as (
-    select 0 as id
+    select 1 as id
     UNION 
     Select null as id
     
