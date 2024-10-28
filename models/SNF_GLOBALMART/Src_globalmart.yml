@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: globalmart
+    database: RAW
+    schema: GLOBALMART
+    tables:
+      - name: product
+      - name: customers
+      - name: Orders
+        columns:
+          - name: loadedat
+            freshness:
+            error_after:
+              count: 24
+              period: hr
+            warn_after:
+              count: 12
+              period: hr

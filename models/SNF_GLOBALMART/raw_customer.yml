@@ -1,0 +1,30 @@
+version: 2
+
+models:
+    - name: customers
+      description: "A starter dbt model"
+      columns:
+          - name: customerid
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+              
+    - name: Orders
+      columns:
+          - name: orderid
+            tests:
+              - unique
+              - not_null
+              
+          - name: shipmode
+            tests:
+                - accepted_values:
+                    values:
+                      - 'First Class'
+                      - 'Second Class'
+                      - 'Standard Class'
+                      - 'Same Day'
+
+
+    
