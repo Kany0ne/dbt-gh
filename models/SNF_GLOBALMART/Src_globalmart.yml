@@ -9,6 +9,11 @@ sources:
       - name: customers
       - name: Orders
         columns:
+          - name: orderid
+            tests:
+              - not_null
+              - unique 
+
           - name: loadedat
             freshness:
             error_after:
