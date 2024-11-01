@@ -1,0 +1,12 @@
+{%- set tabletype="Orders" -%}
+{%- set category=["Furnitures","Stationary","Tech"] -%}
+
+
+Select 
+Orderid,
+'{{tabletype}}' as tablesource,
+{% for cat in category %}
+'{{cat}}' as {{cat}}_category,
+{% endfor %}
+
+from {{ref('stg_orders') }}
