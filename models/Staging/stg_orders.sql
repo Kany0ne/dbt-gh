@@ -8,6 +8,7 @@ o.customerid,
 o.productid,
 ordersellingprice,
 ordercostprice,
+{{markup('ordersellingprice','ordercostprice')}},
 --from raw_customer
 customername,
 segment,
